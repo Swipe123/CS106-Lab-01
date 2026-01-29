@@ -8,7 +8,11 @@
  */
 int thirdBits(void)
 {
-    return 2;
+    int x = 0x49;
+    x = x | (x << 9);
+    x = x | (x << 18);
+
+    return x;
 }
 
 int test_thirdBits(void)

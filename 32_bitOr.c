@@ -9,7 +9,8 @@
  */
 int bitOr(int x, int y)
 {
-    return 2;
+    return ~(~x & ~y);
+
 }
 
 int test_bitOr(int x, int y)
@@ -19,8 +20,8 @@ int test_bitOr(int x, int y)
 
 int main(void)
 {
-    int x = 0;
-    int y = 0;
+    int x = 5;
+    int y = 6;
     printf("expected: %x\n", bitOr(x, y));
     printf("actual  : %x\n", test_bitOr(x, y));
 }

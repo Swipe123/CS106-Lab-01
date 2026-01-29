@@ -10,7 +10,8 @@
  */
 int fitsShort(int x)
 {
-    return 2;
+    int y = (x << 16) >> 16;
+    return !(x ^ y);
 }
 
 int test_fitsShort(int x)
@@ -21,7 +22,7 @@ int test_fitsShort(int x)
 
 int main(void)
 {
-    int x = 0;
+    int x = -32768;
     printf("expected: %x\n", fitsShort(x));
     printf("actual  : %x\n", test_fitsShort(x));
 }
