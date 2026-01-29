@@ -9,7 +9,7 @@
  */
 int isTmin(int x)
 {
-    return !(x ^ (~x + 1)) & !!x;
+    return !(x ^ (1 << 31));
 }
 
 int test_isTmin(int x)
@@ -19,7 +19,7 @@ int test_isTmin(int x)
 
 int main(void)
 {
-    int x = 0x80000000;
+    int x = 0;
     printf("expected: %x\n", isTmin(x));
     printf("actual  : %x\n", test_isTmin(x));
 }
